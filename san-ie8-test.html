@@ -1,0 +1,24 @@
+<html>
+    <body>
+        <div id="san-test"><span>1233</span></div>
+        <script src="https://cdn.jsdelivr.net/npm/san/dist/san.dev.min.js"></script>
+        <script>
+        
+        var child = san.defineComponent({
+            template: '<span>1233</span>'
+        });
+
+        var node = san.defineComponent({
+            template: '<div id="san-test"><ui-child></ui-child></div>',
+
+            components: {
+                'ui-child': child
+            }
+        });
+
+        var el = document.getElementById('san-test');
+
+        new node({el: el});
+        </script>
+    </body>
+</html>
