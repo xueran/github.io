@@ -1,6 +1,8 @@
 <html>
     <body>
-        <div id="san-test"><span>1233</span></div>
+        <div>
+            <div id="san-test">ttt<span>1233</span></div>
+        </div>
         <script src="https://unpkg.com/san@3.9.0/dist/san.min.js"></script>
         <script>
         
@@ -9,7 +11,7 @@
         });
 
         var node = san.defineComponent({
-            template: '<div id="san-test"><ui-child></ui-child></div>',
+            template: '<div id="san-test">ttt<ui-child></ui-child></div>',
 
             components: {
                 'ui-child': child
