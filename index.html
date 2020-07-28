@@ -7,11 +7,16 @@
         <script>
         
         var child = san.defineComponent({
-            template: '<span>1233</span>'
+            template: '<span>{{test|raw}}</span>'
         });
 
         var node = san.defineComponent({
-            template: '<div id="san-test">ttt<ui-child></ui-child></div>',
+            initData() {
+                return {
+                    test:'<span>1111</span>'
+                }
+            },
+            template: '<div id="san-test"><p>{{test|raw}}</p><ui-child></ui-child><p>111<a href="#">22</a></p></div>',
 
             components: {
                 'ui-child': child
