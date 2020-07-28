@@ -1,7 +1,13 @@
 <html>
     <body>
         <div>
-            <div id="san-test">ttt<span>1233</span></div>
+            <div id="san-test">
+                <p>
+                    <em>1111</em>
+                </p>
+                <span><em>1111</em></span>
+                <p>111<a href="#">22</a></p>
+            </div>
         </div>
         <script src="https://unpkg.com/san@3.9.0/dist/san.min.js"></script>
         <script>
@@ -13,7 +19,7 @@
         var node = san.defineComponent({
             initData() {
                 return {
-                    test:'<span>1111</span>'
+                    test:'<em>1111</em>'
                 }
             },
             template: '<div id="san-test"><p>{{test|raw}}</p><ui-child></ui-child><p>111<a href="#">22</a></p></div>',
