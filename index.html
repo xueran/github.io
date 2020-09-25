@@ -1,30 +1,32 @@
 <html>
     <body>
         <div id="san-test">
-            <p><!--s-text--><span>111111</span><!--/s-text--></p>
+            <p><span>111111</span></p>
+
             <div class="c-row">
-                <div>
-                PC Search UI Test
-                </div>
+                <div>PC Search UI Test</div><span></span>
             </div>
-            <p><!--s-text--><span>111111</span><!--/s-text--><a>123</a>
-            </p>
         </div>
         <script src="https://unpkg.com/san@3.9.0/dist/san.min.js"></script>
         <script>
         
         var child = san.defineComponent({
-            template: '<div class="c-row"><div>PC Search UI Test</div></div>'
+            initData() {
+                return {
+                    des: ''
+                }
+            },
+            template: '<div class="c-row"><div>PC Search UI Test</div><span>{{ des }}<span></div>'
         });
 
         var node = san.defineComponent({
             initData() {
                 return {
-                    test:'<span>111111</span>'
+                    test:'<span>111111</span>',
+                    des: ''
                 }
             },
-            template: '<div id="san-test"><p>{{test|raw}}</p><ui-child></ui-child><p>{{test|raw}}<a>123</a></p></div>',
-
+            template: '<div id="san-test"><p>{{test|raw}}</p><ui-child des="{{des}}"></ui-child></div>',
             components: {
                 'ui-child': child
             }
