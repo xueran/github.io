@@ -1,10 +1,9 @@
 <html>
     <body>
         <div id="san-test">
-            <p><span>111111</span></p>
-
+            test
             <div class="c-row">
-                <div>PC Search UI Test</div><span></span>
+                <span></span>
             </div>
         </div>
         <script src="https://unpkg.com/san@3.9.0/dist/san.min.js"></script>
@@ -16,24 +15,17 @@
                     des: ''
                 }
             },
-            template: '<div class="c-row"><div>PC Search UI Test</div><span>{{ des }}<span></div>'
+            template: '<div class="c-row"><span>{{ des }}<span></div>'
         });
 
         var node = san.defineComponent({
-            initData() {
-                return {
-                    test:'<span>111111</span>',
-                    des: ''
-                }
-            },
-            template: '<div id="san-test"><p>{{test|raw}}</p><ui-child des="{{des}}"></ui-child></div>',
+            template: '<div id="san-test">test<ui-child></ui-child></div>',
             components: {
                 'ui-child': child
             }
         });
 
         var el = document.getElementById('san-test');
-
         new node({el: el});
         </script>
     </body>
